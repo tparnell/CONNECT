@@ -32,6 +32,7 @@ import gov.hhs.fha.nhinc.properties.PropertyAccessor;
 import java.io.File;
 
 import javax.xml.bind.JAXBException;
+
 import org.apache.log4j.Logger;
 import org.uddi.api_v3.BusinessDetail;
 
@@ -95,7 +96,6 @@ public class InternalConnectionInfoDAOFileImpl extends ConnectionManagerDAOBase 
             resp = super.loadBusinessDetail(file);
         } catch (JAXBException ex) {
             LOG.error("unable to load business entities from " + file.getName(), ex);
-            resp = new BusinessDetail();
             throw new Exception("unable to load business entities from " + file.getName(), ex);
         }
         return resp;

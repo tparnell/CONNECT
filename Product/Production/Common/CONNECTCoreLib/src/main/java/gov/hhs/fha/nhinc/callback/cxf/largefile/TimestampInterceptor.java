@@ -34,11 +34,11 @@ import org.apache.cxf.phase.Phase;
 
 /**
  * @author akong
- *
+ * 
  */
 public class TimestampInterceptor extends AbstractPhaseInterceptor<Message> {
-    public static String INVOCATION_TIME_KEY = "invocationTime";
-    
+    public static final String INVOCATION_TIME_KEY = "invocationTime";
+
     public TimestampInterceptor() {
         super(Phase.RECEIVE);
     }

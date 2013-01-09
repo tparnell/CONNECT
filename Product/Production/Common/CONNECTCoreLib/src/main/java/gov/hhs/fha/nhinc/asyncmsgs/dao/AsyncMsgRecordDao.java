@@ -671,7 +671,7 @@ public class AsyncMsgRecordDao {
 
         // Update all of the records that were returned from the query
         for (AsyncMsgRecord rec : asyncMsgRecs) {
-            rec.setDuration(new Long(0));
+            rec.setDuration(0L);
             rec.setStatus(QUEUE_STATUS_EXPIRED);
             save(rec);
         }

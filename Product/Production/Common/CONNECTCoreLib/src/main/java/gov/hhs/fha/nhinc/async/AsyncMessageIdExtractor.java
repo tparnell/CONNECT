@@ -45,10 +45,13 @@ import org.w3c.dom.Element;
 public class AsyncMessageIdExtractor {
 
     public Element getSoapHeaderElement(WebServiceContext context, String headerName) {
+        if (context == null) {
+            return null;
+        }
         Element element = null;
 
         MessageContext mContext = context.getMessageContext();
-        if (context != null && mContext != null) {
+        if (mContext != null) {
             @SuppressWarnings("unchecked")
             List<Header> headers = (List<Header>) mContext.get(Header.HEADER_LIST);
 
